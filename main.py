@@ -1,0 +1,1 @@
+print("Už se těším na PY kurz. Uf...")
