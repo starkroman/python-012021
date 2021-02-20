@@ -26,7 +26,7 @@ if kod in sklad:
         sklad.pop(kod)
         print(f"Prodáno celkem {pocetZ} součástek a jsou vyprodány.")
     elif pocetZ > pocet :
-        print(f"Prodáno jen {pocet} součástek.")
+        print(f"Prodáno jen {pocet} součástek a jsou vyprodány.BAV")
         sklad.pop(kod)
     else:
         pocet -= pocetZ
