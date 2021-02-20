@@ -497,11 +497,11 @@ pocet = 0
 pocetObyvatel = 0
 region = input("Zadej region: ")
 print(f"V regionu {region} jsou následující státy:")
-for item in staty:
-    if(item['region'] == region):
-        print(f"{item['name']} ", end=", ")
+for polozka in staty:
+    if(polozka['region'] == region):
+        print(f"{polozka['name']} ", end=", ")
         pocet += 1
-        pocetObyvatel += item['population']
+        pocetObyvatel += polozka['population']
 
 print(f"\nCelkový počet států v daném regionu je: {pocet}")
 print(f"Celkový počet obyvatel v daném regionu je: {pocetObyvatel}")
