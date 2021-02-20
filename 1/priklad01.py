@@ -1,35 +1,25 @@
-'''Napiš software, který bude využívat prodavač v případě, že do obchodu přijde zákazník.
-Software se nejprve zeptá na kód součástky a poté na množství, které si zákazník chce koupit.
-Obě informace si ulož. Následně naprogramuj následující varianty:
-- Pokud zadaný zadaný kód není ve slovníku, není součástka skladem. Vypiš tedy zprávu,
-že součástka není skladem.
-- Pokud zadaná součástka na skladě je, ale je jí méně, než požaduje zákazník,
-vypiš text o tom, že lze prodat pouze omezené množství kusů. Následně součástku
-odeber ze slovníku, protože je vyprodaná.
-- Pokud zadaná součástka na skladě je a je jí dostatek, vypiš informaci, že poptávku
-lze uspokojit v plné výši, a sniž počet součástek na skladě o množství požadované
-zákazníkem.'''
+'''Níže máš slovník, který obsahuje kódy balíků s informací, zda již byl balík předán kurýrovi k doručení.
+Pokud byl předán, má hodnotu True, v opačném případě má hodnotu False.
 
-sklad = {
-  "1N4148": 250,
-  "BAV21": 54,
-  "KC147": 147,
-  "2N7002": 97,
-  "BC547C": 10
+Napiš program pro operátora společnosti, který poskytuje informaci, zda byl balík předán kurýrovi.
+Nejprve se uživatele zeptej na kód balíku. Následně podle hodnoty ve slovníku vypiš větu Balík byl předán kurýrovi
+nebo Balík zatím nebyl předán kurýrovi.'''
+
+baliky = {
+    "B541X": True,
+    "B547X": False,
+    "B251X": False,
+    "B501X": True,
+    "B947X": False,
 }
 
-kod = input("Zadej kód součástky: ")
-if kod in sklad:
-    pocet = sklad[kod]
-    pocetZ = int(input("Zadej počet součástek: "))
-    if pocet == pocetZ:
-        sklad.pop(kod)
-        print(f"Prodáno celkem {pocetZ} součástek a jsou vyprodány.")
-    elif pocetZ > pocet :
-        print(f"Prodáno jen {pocet} součástek.")
-        sklad.pop(kod)
+kod = input("Zadej kód balíku: ")
+if kod in baliky:
+    predano = baliky[kod]
+    if predano:
+        print("Balík byl předán kurýrovi.")
     else:
-        pocet -= pocetZ
-        print(f"Prodáno celkem {pocetZ} součástek a na skladě zbývá: {pocet} ks.")
+        print("Balík zatím nebyl předán kurýrovi.")
 else:
-    print("Tato součástka není na skladě!")
+    print("Takový balík tady není!")
+
