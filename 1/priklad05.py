@@ -21,6 +21,6 @@ pocetKnih = 0
 nazevKnihy = input("Zadej název knihy: ")
 if nazevKnihy in prodeje2019:
     pocetKnih += prodeje2019[nazevKnihy]
-    if nazevKnihy in prodeje2020:
-        pocetKnih += prodeje2020[nazevKnihy]
+if nazevKnihy in prodeje2020:
+    pocetKnih += prodeje2020[nazevKnihy]
 print(f"Počet knih s názven \"{nazevKnihy}\" bylo prodáno celkem: {pocetKnih} ks.")
