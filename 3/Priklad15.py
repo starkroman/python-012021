@@ -1,0 +1,28 @@
+from datetime import datetime, timedelta
+
+prvni_datum = datetime(2021, 7, 1)
+druhe_datum = datetime(2021, 8, 10)
+treti_datum = datetime(2021, 8, 11)
+ctvrte_datum = datetime(2021, 8, 31)
+
+datum = input("Zadej datum: ")
+
+pomocA = False
+pomocB = 0
+datum = datetime.strptime(datum, "%d.%m.%Y")
+if (datum >= prvni_datum and datum <= druhe_datum):
+    pomocA = True
+    pomocB = 1
+elif (datum >= treti_datum and datum <= ctvrte_datum):
+    pomocA = True
+    pomocB = 2
+else:
+    print("Středisko je v tomto termínu zavřené!")
+
+if pomocA:
+    pocetOsob = int(input("Zadej počet osob: "))
+    if pomocB == 1:
+        cenaListku = pocetOsob * 250
+    else:
+        cenaListku = pocetOsob * 180
+    print(f"Cena za lístky je: {cenaListku} Kč.")
