@@ -18,7 +18,7 @@ def kontrolaCisla(cislo):
     else:
         return False
 
-def CenaSMSky(text):
+def cenaSMSky(text):
     text = text.replace(" ", "")
     if(text != ""):
         # přičtu si jedničku, abych spočítal cenu SMS
@@ -32,6 +32,6 @@ def CenaSMSky(text):
 cislo = input("Zadej číslo, kam máme poslat SMSku: ")
 if(kontrolaCisla(cislo)):
     zprava = input("Zadej zprávu, kterou chceš odeslat: ")
-    print("Cena vaší SMSky je: " + str(CenaSMSky(zprava)) + " Kč.")
+    print("Cena vaší SMSky je: " + str(cenaSMSky(zprava)) + " Kč.")
 else:
     print("Vaše číslo má chybný formát!")
