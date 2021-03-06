@@ -6,23 +6,20 @@ treti_datum = datetime(2021, 8, 11)
 ctvrte_datum = datetime(2021, 8, 31)
 
 datum = input("Zadej datum: ")
-
-pomocA = False
-pomocB = 0
 datum = datetime.strptime(datum, "%d.%m.%Y")
+
+pomocna = 0
 if (datum >= prvni_datum and datum <= druhe_datum):
-    pomocA = True
-    pomocB = 1
+    pomocna = 1
 elif (datum >= treti_datum and datum <= ctvrte_datum):
-    pomocA = True
-    pomocB = 2
+    pomocna = 2
 else:
     print("Středisko je v tomto termínu zavřené!")
+    exit()
 
-if pomocA:
-    pocetOsob = int(input("Zadej počet osob: "))
-    if pomocB == 1:
-        cenaListku = pocetOsob * 250
-    else:
-        cenaListku = pocetOsob * 180
-    print(f"Cena za lístky je: {cenaListku} Kč.")
+pocetOsob = int(input("Zadej počet osob: "))
+if pomocna == 1:
+    cenaListku = pocetOsob * 250
+else:
+    cenaListku = pocetOsob * 180
+print(f"Cena za lístky je: {cenaListku} Kč.")
