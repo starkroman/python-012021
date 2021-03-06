@@ -26,11 +26,11 @@ print(auto2.get_info())
 
 
 typAuta = input("Vyber typ auta pro zapůjčení -> [Peugeot/Škoda]: ").lower()
-if typAuta == "peugeot" or typAuta == "skoda" or typAuta=="škoda":
+if typAuta in ["peugeot", "skoda", "škoda"]:
     if typAuta == "peugeot" and auto1.volne:
         print(auto1.get_info())
         print(auto1.pujc_auto())
-    elif (typAuta == "skoda" or typAuta == "škoda") and auto2.volne:
+    elif ["skoda", "škoda"] and auto2.volne:
         print(auto2.get_info())
         print(auto2.pujc_auto())
     else:
