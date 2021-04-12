@@ -25,15 +25,16 @@ ax.set_xlabel('Datum')
 ax.set_title('Velikonoce od 1600 do 2100')
 plt.show()
 
-#bonus  (nevím co to má dělat???
+#bonus  (nevím co to má dělat???)
 
 from dateutil import easter
 
 data = []
-for rok in range(2000,2021):
-  datum = easter.easter(rok)
+for rok in range(2000,2022):
+  datum = easter.easter(rok).strftime("%m-%d")
   data.append(datum)
 
 data = pd.DataFrame(data, columns=["Datum"])
 #print(data.head(n=10))
 data = data.groupby("Datum").size()
+print(data)
