@@ -1,0 +1,18 @@
+{% block content %}
+<h2>Seznam aut varianta2</h2>
+<p>Zde vidíte aktuální seznam aut naší firmy:</p>
+<table border="1">
+    {% for auto in object_list %}
+    <tr>
+        <td>{{ auto.znackaReg }}</td>
+        <td>
+            <a href="{% url 'detail_auto' auto.pk %}">{{ auto.typAuta }}</a>
+        </td>
+    </tr>
+    {% empty %}
+    <p>Bohužel, zatím nemáme žádné auto.</p>
+    {% endfor %}
+</table>
+<br>
+<a href="http://localhost:8000/katalog/">Návrat na hlavní stránku</a>
+{% endblock %}

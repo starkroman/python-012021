@@ -1,0 +1,18 @@
+{% block content %}
+
+<h2>{{ object.auto.typAuta }}</h2>
+
+<h3>Čas začátku výpůjčky:</h3>
+{{ object.datumCasZacatkuVypujcky | date}} - {{ object.datumCasZacatkuVypujcky | time}}
+
+<h3>Čas konce výpůjčky:</h3>
+{{ object.datumCasKonceVypujcky | date }} - {{ object.datumCasKonceVypujcky | time }}
+
+<h3>Cena výpůjčky:</h3>
+{{ object.cenaVypujcky }} Kč
+
+
+{% endblock %}
+
+<br><br><br>
+<a href="{% url 'vypujcka' %}">Návrat Zpět</a>

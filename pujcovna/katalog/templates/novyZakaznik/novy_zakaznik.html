@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Uložit nový záznam">
+</form>
+
+<br><br><br>
+<a href="{% url 'index' %}">Návrat na hlavní stránku</a>

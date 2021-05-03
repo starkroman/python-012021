@@ -1,0 +1,17 @@
+{% block content %}
+<h2>{{ object.typAuta }}</h2>
+
+<h3>Typ:</h3>
+{{ object.znackaReg }}
+
+<h3>Poček km:</h3>
+{{ object.pocetKM }} km
+
+<h3>Datum poslední STK:</h3>
+{{ object.datumPoslSTK | date }}
+
+{% endblock %}
+
+<br><br><br>
+<a href="{% url 'auto' %}">Návrat Zpět</a>
+

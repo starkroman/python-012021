@@ -1,0 +1,11 @@
+{% block content %}
+<h2>Seznam aut</h2>
+<p>Zde vidíte aktuální seznam aut naší firmy:</p>
+<ul>
+    {% for auto in object_list %}
+    <li>{{ auto.znackaReg }}, {{ auto.typAuta }}</li>
+    {% empty %}
+    <li>Sorry, no auto in this list.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

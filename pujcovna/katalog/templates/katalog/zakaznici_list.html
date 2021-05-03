@@ -1,0 +1,16 @@
+{% block content %}
+<h2>Seznam našich zákazníků</h2>
+<ul>
+    {% for osoba in object_list %}
+    <li>Zákazník: {{ osoba.pk }} =>
+        <a href="{% url 'detail_zakaznici' osoba.pk %}">
+            {{ osoba.jmenoPrijmeni }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+<a href="http://localhost:8000/katalog/">Návrat na hlavní stránku</a>
+
+{% endblock %}

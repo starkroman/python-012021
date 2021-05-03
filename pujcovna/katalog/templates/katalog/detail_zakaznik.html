@@ -1,0 +1,15 @@
+{% block content %}
+
+<h2>{{ object.jmenoPrijmeni }}</h2>
+
+<h3>Číslo řidičáku:</h3>
+{{ object.cisloRidicaku }}
+
+<h3>Datum narození:</h3>
+{{ object.datumNarozeni | date }}
+
+
+{% endblock %}
+
+<br><br><br>
+<a href="{% url 'index' %}">Návrat na hlavní stránku</a>

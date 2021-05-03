@@ -1,0 +1,18 @@
+{% block content %}
+<h2>Seznam výpůjček</h2>
+<p>Zde vidíte aktuální seznam vypůjčených aut:</p>
+<ul>
+    {% for polozka in object_list %}
+    <li>Výpůjčka: =>
+        <a href="{% url 'detail_vypujcka' polozka.pk %}">
+            {{ polozka.auto.typAuta}},
+        </a>
+        ... Kdo má půjčeno:  {{ polozka.auto.zakaznik.jmenoPrijmeni}}
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+<a href="http://localhost:8000/katalog/">Návrat na hlavní stránku</a>
+
+{% endblock %}
